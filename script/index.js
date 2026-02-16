@@ -1,15 +1,3 @@
-// //  console.log("js add hoiche ")
-
-// fetch("https://fakestoreapi.com/products")
-// .then((res) => res.json())
-// .then((data) => displayProducts(data))
-
-
-// const displayProducts = (products) =>{
-//     // // console.log(products)      //product asche
-//     for (let product of products) {
-//         console.log(product.rating.rate) // akhane rate gulo pacchi
-//     }
 
 fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
