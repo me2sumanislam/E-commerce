@@ -28,6 +28,24 @@
     }
  }
 
-
-
  loadCategories();
+
+ const loadProduct = () =>{
+    const url = `https://fakestoreapi.com/products`
+    // console.log(url);
+    fetch(url)
+    .then((res) => res.json())
+    .then ((data) => seenProduct(data))
+ }
+
+ const seenProduct = (Products) => {
+    // console.log(Product);
+    const productContainer =document.getElementById("product-container");
+    productContainer.innerHTML = "";
+
+    Products.forEach(product => {
+
+        console.log(product)
+        
+    });
+ }
