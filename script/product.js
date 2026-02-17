@@ -1,5 +1,3 @@
- 
-  
 
  const loadCategories = () =>{
     fetch ("https://fakestoreapi.com/products/categories")
@@ -21,7 +19,7 @@
 
         div.innerHTML = `
 
-        <button class =" btn rounded-xl px-5 py-2 border" >
+        <button id="lesson-btn- ${btncatagorie}"  class =" btn rounded-xl px-5 py-2 border" >
         ${btncatagorie}
         </button>
         
@@ -40,6 +38,28 @@
     .then((res) => res.json())
     .then ((data) => seenProduct(data))
  } 
+
+ const loadProductDetail = async(id) => {
+     const url = `https://fakestoreapi.com/products/${id}`
+    //  console.log(url)
+
+    const res = await fetch(url);
+const details = await res.json();
+displayProductDetails(details.data)
+
+ }
+
+const displayProductDetails = (Dproduct) =>{
+    // console.log(Dproduct)
+    const detailsBox = document.getElementById("details-container")
+    detailsBox.innerHTML ="hi iam from js";
+    document.getElementById("word_modal").showModal();
+}
+
+
+
+
+
 
 const seenProduct = (Products) => {
     const productContainer = document.getElementById("product-container");
@@ -69,7 +89,7 @@ const seenProduct = (Products) => {
             </div>
 
             <div class="flex justify-between items-center mt-4 gap-2"> 
-                <button class="btn  px-4 py-2 rounded flex-1 hover:bg-gray-100 transition">Details</button>
+                <button onclick ="loadProductDetail(${product.id})" class="btn  px-4 py-2 rounded flex-1 hover:bg-gray-100 transition">Details</button>
                 <button class="btn btn-primary bg-blue-600 text-white px-4 py-2 rounded flex-1 hover:bg-blue-700 transition">Add to Cart</button>
             </div>
             

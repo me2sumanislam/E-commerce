@@ -21,7 +21,7 @@ const displayProducts = (products) => {
         const div = document.createElement("div");
         div.innerHTML = `
  
-   <div class ="border-2 p-10 m-5 rounded ">
+   <div class =" p-10 m-5 rounded ">
       
         <img class =" w-100  h-80" src="${product.image}" />
         <div class = "flex justify-between">
