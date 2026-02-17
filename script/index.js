@@ -35,10 +35,10 @@ const displayProducts = (products) => {
  </div>
         <h3>${product.title}</h3>
         <p><b>Price:</b> $${product.price}</p>
-        <span class = " flex justify-between mt-5"> 
-        <button class="btn px-6 py-3">Details</button>
-        <button class="btn btn-primary px-6 py-3">Primary</button>
-        <span>
+        <div class ="mt-auto flex gap-2"> 
+        <button class="btn flex-1 px-4 py-2">Details</button>
+        <button class="btn btn-primary flex-1 px-4 py-2 ">Primary</button>
+        </div>
       </div>
       </div>
     `;
