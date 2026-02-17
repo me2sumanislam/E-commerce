@@ -12,7 +12,7 @@ const displayProducts = (products) => {
     //   console.log(top3)
 
     // container
-    const container = document.getElementById("product-container");
+    const container = document.getElementById("product-containerOne");
     container.innerHTML = "";
 
     // show top 3

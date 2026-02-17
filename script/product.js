@@ -1,4 +1,6 @@
  
+  
+
  const loadCategories = () =>{
     fetch ("https://fakestoreapi.com/products/categories")
     .then((res) => res.json())
@@ -30,59 +32,18 @@
 
  loadCategories();
 
+ 
  const loadProduct = () =>{
     const url = `https://fakestoreapi.com/products`
     // console.log(url);
     fetch(url)
     .then((res) => res.json())
     .then ((data) => seenProduct(data))
- }
-
-//  const seenProduct = (Products) => {
-//     // console.log(Product);
-//     const productContainer =document.getElementById("product-container");
-//     productContainer.innerHTML = "";
-
-//     Products.forEach(product => {
-
-//         // console.log(product)
-     
-//         const card = document.createElement("div")
-
-//         card.innerHTML = `
-         
-//          <div class ="border-2 rounded p-5 flex flex-col w-full h-[450px] ">
-      
-//         <img class =" w-full  h-48 object-contain mb-3" src="${product.image}" />
-//         <div class = "flex justify-between">
-//         <span>${product.category}</span>
-//        <span class="flex items-center">
-//   <span class="text-yellow-400">&#9733;</span>  <!-- Star হলুদ -->
-//   <b class="ml-1 text-black">${product.rating.rate}</b>
-//    <!-- Rating number কালো -->
-//     <p><b></b> (${product.rating.count})</p>
-// </span>
-//  </div>
-//         <h3>${product.title}</h3>
-//         <p><b>Price:</b> $${product.price}</p>
-//         <span class = " flex justify-between mt-5"> 
-//         <button class="btn px-6 py-3">Details</button>
-//         <button class="btn btn-primary px-6 py-3">Add</button>
-//         </span>
-//       </div>
-//       </div>
-   
-        
-//         `;
-
-//          productContainer.append(card)
-        
-//     });
-
+ } 
 
 const seenProduct = (Products) => {
     const productContainer = document.getElementById("product-container");
-    productContainer.innerHTML = "";
+   productContainer.innerHTML = "";
 
     Products.forEach(product => {
         const card = document.createElement("div");
@@ -108,7 +69,7 @@ const seenProduct = (Products) => {
             </div>
 
             <div class="flex justify-between items-center mt-4 gap-2"> 
-                <button class="btn border px-4 py-2 rounded flex-1 hover:bg-gray-100 transition">Details</button>
+                <button class="btn  px-4 py-2 rounded flex-1 hover:bg-gray-100 transition">Details</button>
                 <button class="btn btn-primary bg-blue-600 text-white px-4 py-2 rounded flex-1 hover:bg-blue-700 transition">Add to Cart</button>
             </div>
             
@@ -118,7 +79,8 @@ const seenProduct = (Products) => {
         productContainer.append(card);
     });
 }
-
+loadProduct();
+ 
 
 
 
