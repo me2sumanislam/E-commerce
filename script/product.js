@@ -55,25 +55,27 @@ const displayProductDetails = (Dproduct) =>{
     // console.log(Dproduct)
     const detailsBox = document.getElementById("details-container")
     detailsBox.innerHTML = `  
-   <div class ="border-2 p-10 m-5 rounded ">
-      
+   <div class ="p-10 m-5 rounded ">
         <img class =" w-50 " src="${Dproduct.image}" />
-        <div class = "flex justify-between">
-        <span>${Dproduct.category}</span>
-       <span class="flex items-center">
-  <span class="text-yellow-400">&#9733;</span>   
-  <b class="ml-1 text-black">${Dproduct.rating.rate}</b>  
-</span>
-</div>
         </div>
-        <h3>${Dproduct.title}</h3>
-        <p><b>Price:</b> $${Dproduct.price}</p>
-        <p><b>Total Reviews:</b> ${Dproduct.rating.count}</p>
-        <p>${Dproduct.description.slice(0, 100)}...</p>
-      </div>
-      </div>
-    
-    
+         <h1 class= "font-bold ">${Dproduct.title}</h1>
+          <p>${Dproduct.description.slice(0, 100)}...</p>
+          <p><b>Price:</b> $${Dproduct.price}</p>
+          <span class="text-yellow-400">&#9733; </span>
+          <b class="ml-1 text-black">${Dproduct.rating.rate}</b>
+        
+<div class=" flex mt-5 gap-5">   
+<button class="btn btn-primary">Buy Now</button>
+<button class="btn btn-secondary">Add to Cart</button>
+</div>
+
+   
+ 
+</div>
+       
+         
+     
+       
     
     
     

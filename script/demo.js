@@ -5,10 +5,10 @@
         <div class = "flex justify-between">
         <span>${product.category}</span>
        <span class="flex items-center">
-  <span class="text-yellow-400">&#9733;</span>  <!-- Star হলুদ -->
-  <b class="ml-1 text-black">${product.rating.rate}</b> <!-- Rating number কালো -->
+  <span class="text-yellow-400">&#9733;</span>   
+  <b class="ml-1 text-black">${product.rating.rate}</b>  
 </span>
-
+<div>
         </div>
         <h3>${product.title}</h3>
         <p><b>Price:</b> $${product.price}</p>
@@ -16,4 +16,4 @@
         <p>${product.description.slice(0, 100)}...</p>
       </div>
       </div>
-    `;
+    
