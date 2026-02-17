@@ -4,10 +4,9 @@ fetch("https://fakestoreapi.com/products")
     .then((data) => displayProducts(data));
 
 const displayProducts = (products) => {
-    // rating অনুযায়ী বড় থেকে ছোট sort
+     
     const sortedProducts = products.sort((a, b) => b.rating.rate - a.rating.rate);
-
-    // top 3 products
+ 
     const top3 = sortedProducts.slice(0, 3);
     //   console.log(top3)
 
@@ -15,7 +14,7 @@ const displayProducts = (products) => {
     const container = document.getElementById("product-containerOne");
     container.innerHTML = "";
 
-    // show top 3
+    
     top3.forEach((product) => {
         // console.log(product.category)
         const div = document.createElement("div");
@@ -36,8 +35,8 @@ const displayProducts = (products) => {
         <h3>${product.title}</h3>
         <p><b>Price:</b> $${product.price}</p>
         <div class ="mt-auto flex gap-2"> 
-        <button class="btn flex-1 px-4 py-2">Details</button>
-        <button class="btn btn-primary flex-1 px-4 py-2 ">Primary</button>
+        <button onclick="loadProductDetailOne(${product.id})" class="btn btn-primary">Details</button>
+     <button class="btn btn-primary flex-1 px-4 py-2 ">Add to Cart</button>
         </div>
       </div>
       </div>
@@ -47,6 +46,38 @@ const displayProducts = (products) => {
     });
 };
 
+ const loadProductDetailOne = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+
+  const res = await fetch(url);
+  const details = await res.json();
+
+  displayProductDetailsOne(details);
+};
+
+const displayProductDetailsOne = (Dproduct) => {
+  const detailsBox = document.getElementById("details-containerOne");
+
+  detailsBox.innerHTML = `
+    <div class="p-10 m-5 rounded">
+      <img class="w-[200px]" src="${Dproduct.image}" />
+
+      <h1 class="font-bold mt-3">${Dproduct.title}</h1>
+      <p>${Dproduct.description.slice(0, 100)}...</p>
+      <p><b>Price:</b> $${Dproduct.price}</p>
+
+      <span class="text-yellow-400">&#9733;</span>
+      <b class="ml-1 text-black">${Dproduct.rating.rate}</b>
+
+      <div class="flex mt-5 gap-5">
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-secondary">Add to Cart</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("word_modal").showModal();
+};
 
 
 
